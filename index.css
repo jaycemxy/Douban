@@ -27,6 +27,8 @@ main {
     -webkit-overflow-scrolling: touch;
 }
 
+
+/* main */
 main>section {
     display: none;
 }
@@ -35,6 +37,7 @@ main>section:first-child {
     display: block;
 }
 
+/* item */
 .item {
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
@@ -69,6 +72,23 @@ main>section:first-child {
     color: #ff5722;
 }
 
+/* loading */
+.loading{
+    padding: 5px;
+    text-align: center;
+    display: none;
+}
+.loading .iconfont{
+    display: inline-block;
+    animation: 1s rotate linear infinite;
+}
+@keyframes rotate{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+
+/* footer */
 footer {
     position: absolute;
     bottom: 0;

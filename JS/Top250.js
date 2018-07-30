@@ -6,10 +6,13 @@ $('footer>div').click(function () {
 
 
 var index = 0
-
 getData()
+var isLoading = false
 
 function getData() {
+    if(isLoading) return
+    isLoading = true
+    $('.loading').show()
     $.ajax({
         url: 'https://api.douban.com/v2/movie/top250',
         type: 'GET',
@@ -24,11 +27,14 @@ function getData() {
         index += 20
     }).fail(function () {
         console.log('error...')
+    }).always(function(){
+        isLoading = false
+        $('.loading').hide()
     })
 }
 
 $('main').scroll(function () {
-    if ($('section').eq(0).height - 10 <= $('main').scrollTop() + $('main').height()) {
+    if ($('section').eq(0).height() - 10 <= $('main').scrollTop() + $('main').height()) {
         getData()
     }
 })
@@ -73,6 +79,6 @@ function setData(data) {
             return actorArr.join('、')
         })
 
-        $('section').eq(0).append($node)
+        $('#top250').append($node)
     })
 }
