@@ -10,20 +10,26 @@
 
 <body>
     <main>
-        <section class="top">
-            <div id="top250"></div>
+        <section id="top250">
+            <div class="container"></div>
             <div class="loading"><span class="iconfont icon-loading"></span></div>
         </section>
-        <section class="us">
+        
+        <section id="beimei">
             <div class="container"></div>
-            <span class="iconfont icon-loading"></span>
+            <div class="loading"><span class="iconfont icon-loading"></span></div>
         </section>
-        <section class="search">
-            <div class="searchWrapper">
-                <input type="search" placeholder="搜索电影"><span class="btn">搜索</span>
+        
+        <section id="search">
+            <div class="wrap">
+                <div class="search-area">
+                    <input type="text" placeholder="搜索电影"><span class="button">搜索</span>
+                </div>
             </div>
-            <div class="container"></div>
-            <span class="iconfont icon-loading"></span>
+            <div class="search-result">
+                <div class="container"></div>
+                <div class="loading"><span class="iconfont icon-loading"></span></div>
+            </div>
         </section>
     </main>
     
@@ -34,6 +40,6 @@
     </footer>
 
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
-    <script src="./JS/Top250.js"></script>
+    <script src="./index.js"></script>
 </body>
 </html>

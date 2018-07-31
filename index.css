@@ -1,7 +1,7 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 a {
@@ -10,34 +10,34 @@ a {
 }
 
 html,
-body {
+body,
+main {
     height: 100%;
+    position: relative;
 }
 
 body {
-    position: relative;
     font-size: 12px;
     line-height: 1.2;
-    background-color: #fff;
 }
 
-main {
-    height: calc(100vh - 50px);
+main>section {
+    height: calc(100% - 45px);
+    padding: 10px;
+    background: #fff;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
+    /*ios 上增加弹性*/
 }
 
-
-/* main */
 main>section {
     display: none;
 }
 
-main>section:first-child {
+main section:first-child {
     display: block;
 }
 
-/* item */
 .item {
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
@@ -69,38 +69,76 @@ main>section:first-child {
 }
 
 .item .detail .score {
-    color: #ff5722;
+    color: #FF5722;
 }
 
-/* loading */
-.loading{
-    padding: 5px;
+.loading {
     text-align: center;
+    padding-top: 10px;
     display: none;
 }
-.loading .iconfont{
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#search {
+    height: calc(100% - 45px);
+}
+
+section .search-area {
+    color: #333;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+section .search-area input {
+    width: calc(100% - 50px);
+    padding: 8px;
+    background-color: #eee;
+    border: none;
+    border-radius: 2px;
+    box-shadow: none;
+    outline: none;
+}
+
+section .search-area .button {
+    position: absolute;
+    right: 0;
+    padding: 8px 10px;
+    background: #FF5722;
+    color: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.loading .iconfont {
     display: inline-block;
     animation: 1s rotate linear infinite;
 }
-@keyframes rotate{
-    0% {transform: rotate(0deg);}
-    100% {transform: rotate(360deg);}
-}
 
-
-/* footer */
 footer {
     position: absolute;
     bottom: 0;
-    height: 50px;
+    height: 45px;
     width: 100%;
-    display: flex;
     border-top: 1px solid #ccc;
+    background-color: #fff;
+    display: flex;
 }
 
 footer>div {
     flex: 1;
+    font-size: 12px;
     text-align: center;
+    color: #666;
+    padding-top: 6px;
 }
 
 footer .active {
@@ -109,5 +147,4 @@ footer .active {
 
 footer>div>span {
     display: block;
-    padding-top: 5px;
 }
