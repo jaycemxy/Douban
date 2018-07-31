@@ -31,14 +31,7 @@ var Helpers = {
     }
 }
 
-
-$('footer>div').on('click', function(){
-    $(this).addClass('active').siblings().removeClass('active')
-    var index = $(this).index()
-    $('main section').eq(index).fadeIn().siblings().fadeOut()
-})
-
-/* var Paging = {
+var Paging = {
     init: function () {
         this.$tabs = $('footer>div')
         this.$pages = $('main>section')
@@ -54,7 +47,7 @@ $('footer>div').on('click', function(){
             _this.$pages.eq(index).fadeIn().siblings().fadeOut()
         })
     }
-} */
+}
 
 /* top250 */
 var Top250 = {
@@ -229,6 +222,7 @@ var Search = {
 
 var App = {
     init: function () {
+        Paging.init()
         Top250.init()
         UsBoard.init()
         Search.init()
